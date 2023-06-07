@@ -6,8 +6,8 @@ import numpy as np
 import geopy.distance
 import joblib
 
-st.header(" CabiAnyone App")
-st.text_input("Enter your username: ", key="name")
+st.header("Anyone IApp")
+st.footer("Travel safe, travel smart")
 data = pd.read_csv("filtered_raw.csv")
 
 #load fare scaler
