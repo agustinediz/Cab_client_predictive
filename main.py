@@ -14,7 +14,7 @@ data = pd.read_csv("filtered_raw.csv")
 fare_scaler = joblib.load("fare_scaler")
 
 #load duration scaler
-duration_scaler = joblib.load(duration_scaler) 
+duration_scaler = joblib.load("duration_scaler") 
 
 # load model fare
 xreg_fare = xgb.XGBRegressor()
