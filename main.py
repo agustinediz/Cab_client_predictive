@@ -28,14 +28,14 @@ xreg_duration.load_model("xgb_duration.json")
 
 
 #Features Zones
-metric_labels = {"PUZone": "Zone of Pickup", "DOZone": "Drop off Zone"}
+#metric_labels = {"PUZone": "Zone of Pickup", "DOZone": "Drop off Zone"}
 
-def format_metric(metric_raw):
-    return metric_labels[metric_raw]
+#def format_metric(metric_raw):
+    #return metric_labels[metric_raw]
 
 st.subheader("Please select your trip!")
-continent = st.sidebar.selectbox(label = "Starting from?", options = data["PUZone"], format_func=format_metric)
-continent2 = st.sidebar.selectbox(label = "Where do you want to go today?", options = data["DOZone"], format_func=format_metric)
+continent = st.sidebar.selectbox(label = "Starting from?", options = data["PUZone"])
+continent2 = st.sidebar.selectbox(label = "Where do you want to go today?", options = data["DOZone"])
 
 lat2 = data[data["DOZone"] == continent2].DOLat.mean()
 lon2 = data[data["DOZone"] == continent2].DOLong.mean()
