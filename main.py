@@ -47,8 +47,7 @@ speed_minutes = data[data["hour_pickup"] == input_hour]["speed_minutes"].median(
 
 #Prediction
 if st.button('Make Prediction'):
-    inputs = np.expand_dims(
-        [trip_distance, input_hour], 0)
+    inputs = [trip_distance, input_hour]
     fare_amount = xreg_fare.predict(inputs)
     inputs = np.expand_dims(
         [trip_distance, input_hour, fare_amount], 0)
