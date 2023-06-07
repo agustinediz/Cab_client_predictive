@@ -47,10 +47,10 @@ speed_minutes = data[data["hour_pickup"] == input_hour]["speed_minutes"].median(
 
 #Prediction
 if st.button('Make Prediction'):
-    inputs = [trip_distance, input_hour]
+    inputs1 = np.expand_dims([trip_distance, input_hour], 0)
     fare_amount = xreg_fare.predict(inputs)
-    inputs = np.expand_dims(
+    inputs2 = np.expand_dims(
         [trip_distance, input_hour, fare_amount], 0)
-    duration = xreg_duration.predict(inputs)
+    duration = xreg_duration.predict(inputs2)
     print("final pred", np.squeeze([fare_amount,duration], -1))
     st.write(f"Your trip will cost {np.squeeze(fare_amount, -1)} and the trip duration is {np.squeeze(duration, -1)} minutes")
