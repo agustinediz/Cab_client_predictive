@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import  LabelEncoder
 import xgboost as xgb
 import numpy as np
-from math import sqrt, cos, radians
+import geopy.distance
 
 st.header(" CabiAnyone App")
 st.text_input("Enter your username: ", key="name")
@@ -31,10 +31,10 @@ lat1 = data[data["PUZone"] == continent].PULat.mean()
 lon1 = data[data["PUZone"] == continent].PULong.mean()
 
 #Estimate trip distance using lat and long
-R = 6371  # radius of the earth in km
-x = (radians(lon2) - radians(lon1)) * cos(0.5 * (radians(lat2) + radians(lat1)))
-y = radians(lat2) - radians(lat1)
-trip_distance = R * sqrt(x*x + y*y)
+coords_1 = (lat1, lon1)
+coords_2 = (lat2, lon2)
+
+trip_distance = geopy.distance.geodesic(coords_1, coords_2).km
 
 #Feature hour
 input_hour = st.slider('What hour is it now?', 0, max(data["hour_pickup"]), 1)
