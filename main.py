@@ -50,4 +50,4 @@ if st.button('Estimate my trip budget'):
     duration = xreg_duration.predict(inputs2)
     duration = float(duration)
     print("final pred", [fare_amount,duration])
-    st.write(f"Your trip will cost {round(fare_amount, 3)} bucks and it will take {round(duration, 3)} minutes")
+    st.write(f"Your trip will cost {round(fare_amount, 2)} bucks and it will take {round(duration, 2)} minutes")
