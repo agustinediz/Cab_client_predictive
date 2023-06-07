@@ -10,21 +10,13 @@ st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("filtered_raw.csv")
 
 
-encoder_PU = LabelEncoder()
-encoder_PU.classes_ = np.load('classes_PU.npy',allow_pickle=True)
-
-encoder_DO = LabelEncoder()
-encoder_DO.classes_ = np.load('classes_DO.npy',allow_pickle=True)
-
-
 # load model fare
-xreg_duration = xgb.XGBRegressor()
-xreg_duration.load_model("xgb_fare.json")
+xreg_fare = xgb.XGBRegressor()
+xreg_fare.load_model("xgb_fare.json")
 
 # load model duration
 xreg_duration = xgb.XGBRegressor()
 xreg_duration.load_model("xgb_duration.json")
-
 
 
 #Features Zones
