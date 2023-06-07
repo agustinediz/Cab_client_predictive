@@ -53,5 +53,5 @@ if st.button('Make Prediction'):
     inputs2 = np.expand_dims(
         [trip_distance, input_hour, fare_amount], 0)
     duration = xreg_duration.predict(inputs2)
-    print("final pred", np.squeeze([fare_amount,duration], -1))
+    print("final pred", [fare_amount,duration])
     st.write(f"Your trip will cost {float(fare_amount)} bucks and the trip duration is {float(duration)} minutes")
