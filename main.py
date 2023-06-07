@@ -4,6 +4,7 @@ from sklearn.preprocessing import  LabelEncoder
 import xgboost as xgb
 import numpy as np
 import geopy.distance
+import joblib
 
 st.header(" CabiAnyone App")
 st.text_input("Enter your username: ", key="name")
