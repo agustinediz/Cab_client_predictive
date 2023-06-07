@@ -47,7 +47,7 @@ if st.button('Estimate my trip budget'):
     fare_amount = xreg_fare.predict(inputs1)
     fare_amount2 = float(fare_amount)
     inputs2 = np.expand_dims(
-        [trip_distance, speed_minutes, fare_amount], 0)
+        [trip_distance, speed_minutes, fare_amount2], 0)
     duration = xreg_duration.predict(inputs2)
     duration = float(duration)
     st.write(f"Your trip will cost {round(fare_amount2, 2)} bucks and it will take {round(duration, 2)} minutes")
