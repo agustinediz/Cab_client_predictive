@@ -11,7 +11,7 @@ st.set_page_config(
     page_icon=":robot:"
 )
 st.header("Anyone IApp")
-st.subheader("_Travel safer and smarter_')        
+st.subheader("_Travel safer and smarter_")        
          
 data = pd.read_csv("filtered_raw.csv")
 
