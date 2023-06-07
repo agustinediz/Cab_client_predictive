@@ -43,11 +43,10 @@ speed_minutes = data[data["hour_pickup"] == input_hour]["speed_minutes"].median(
 
 #Prediction
 if st.button('Estimate my trip budget'):
-    inputs1 = np.expand_dims([trip_distance, speed_minutes], 0)
+    inputs1 = ("trip_distance" : trip_distance, "speed_minutes": speed_minutes)
     fare_amount = xreg_fare.predict(inputs1)
     fare_amount2 = float(fare_amount)
-    inputs2 = np.expand_dims(
-        [trip_distance, speed_minutes, fare_amount2], 0)
+    inputs2 = ("trip_distance" : trip_distance, "speed_minutes": speed_minutes, "fare_amount": fare_amount2)
     duration = xreg_duration.predict(inputs2)
     duration = float(duration)
     st.write(f"Your trip will cost {round(fare_amount2, 2)} bucks and it will take {round(duration, 2)} minutes")
