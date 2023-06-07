@@ -11,10 +11,10 @@ st.text_input("Enter your username: ", key="name")
 data = pd.read_csv("filtered_raw.csv")
 
 #load fare scaler
-fare_scaler = joblib.load("fare_scaler")
+fare_scaler = joblib.load(fare_scaler)
 
 #load duration scaler
-duration_scaler = joblib.load("duration_scaler") 
+duration_scaler = joblib.load(duration_scaler) 
 
 # load model fare
 xreg_fare = xgb.XGBRegressor()
