@@ -5,7 +5,7 @@ import xgboost as xgb
 import numpy as np
 st.header(" Prediction App")
 st.text_input("Enter your Name: ", key="name")
-data = pd.read_csv("/datasets/filtered_df.csv")
+data = pd.read_csv("filtered_df.csv")
 
 
 encoder_PU = LabelEncoder()
