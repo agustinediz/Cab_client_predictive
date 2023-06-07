@@ -6,14 +6,13 @@ import numpy as np
 import geopy.distance
 import joblib
 
-
 st.set_page_config(
     page_title="Anyone IApp",
     page_icon=":robot:"
 )
-
-st.subheader("Travel safer. Travel smarter.")
-st.markdown("_Travel safer. Travel smarter._ ')
+st.header("Anyone IApp")
+st.subheader("_Travel safer and smarter_')        
+         
 data = pd.read_csv("filtered_raw.csv")
 
 #load fare scaler
