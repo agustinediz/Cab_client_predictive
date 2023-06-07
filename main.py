@@ -21,8 +21,8 @@ xreg_duration.load_model("xgb_duration.json")
 
 #Features Zones
 st.subheader("Please, select your trip info")
-continent2 = st.sidebar.selectbox(label = "Where do you want to go today?", options = data["DOZone"])
-continent = st.sidebar.selectbox(label = "Starting from?", options = data["PUZone"])
+continent2 = st.sidebar.selectbox(label = "Where do you want to go today?", options = data["DOZone"].unique())
+continent = st.sidebar.selectbox(label = "Starting from?", options = data["PUZone"].unique())
 
 lat2 = data[data["DOZone"] == continent2].DOLat.mean()
 lon2 = data[data["DOZone"] == continent2].DOLong.mean()
