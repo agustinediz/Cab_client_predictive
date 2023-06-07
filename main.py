@@ -12,8 +12,8 @@ st.set_page_config(
     page_icon=":robot:"
 )
 
-st.header("Travel safer. Travler smarter.")
-
+st.subheader("Travel safer. Travel smarter.")
+st.markdown("_Travel safer. Travel smarter._ ')
 data = pd.read_csv("filtered_raw.csv")
 
 #load fare scaler
