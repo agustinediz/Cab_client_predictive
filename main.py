@@ -50,12 +50,12 @@ speed_minutes = data[data["hour_pickup"] == input_hour]["speed_minutes"].median(
 #Prediction
 if st.button('Estimate my trip budget'):
     inputs1 = {"trip_distance" : trip_distance, "speed_minutes": speed_minutes}
-    inputs1 = pd.DataFrame[[inputs1]]
+    inputs1 = pd.DataFrame.from_dict(inputs1)
     inputs1 = fare_scaler.transform(inputs1)
     fare_amount = xreg_fare.predict(inputs1)
     fare_amount2 = float(fare_amount)
     inputs2 = {"trip_distance" : trip_distance, "speed_minutes": speed_minutes, "fare_amount": fare_amount2}
-    inputs2 = pd.DataFrame[[inputs2]]
+    inputs2 = pd.DataFrame.from_dict(inputs2)
     inputs2 = duration_scaler.transform(inputs2)
     duration = xreg_duration.predict(inputs2)
     duration = float(duration)
